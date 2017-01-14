@@ -60,7 +60,7 @@ public class App {
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                     ex.printStackTrace();
                 }
-                setDefaultSize(34);
+                setDefaultSize(16);
 				View view = new View();
 				CostumeCollection itemCollection = new CostumeCollection();
 				itemCollection.fillWithitems();

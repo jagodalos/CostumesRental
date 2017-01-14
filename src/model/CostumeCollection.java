@@ -21,6 +21,10 @@ public class CostumeCollection {
 
 		costumes.add(item);
 	}
+	
+	public ArrayList <Costume> getCostumes(){
+		return costumes;
+	}
 
 	public void fillWithitems() {
 		Random generator = new Random();

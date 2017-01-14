@@ -2,26 +2,35 @@ package model;
 
 public class Costume {
 
-	final private String costumeName;
-	final private Integer costumePrice;
-	final private CostumeCategory costumeCategory;
+	final private String name;
+	final private Integer price;
+	final private CostumeCategory category;
+	private boolean available;
 
 	public Costume(String costumeName, Integer costumePrice, CostumeCategory costumeCategory) {
-		this.costumeName = costumeName;
-		this.costumePrice = costumePrice;
-		this.costumeCategory = costumeCategory;
+		this.name = costumeName;
+		this.price = costumePrice;
+		this.category = costumeCategory;
 	}
 
-	public String getCostumeName() {
-		return costumeName;
+	public boolean isAvailable() {
+		return available;
 	}
 
-	public Integer getCostumePrice() {
-		return costumePrice;
+	public void setAvailable(boolean available) {
+		this.available = available;
 	}
 
-	public CostumeCategory getCostumeCategory() {
-		return costumeCategory;
+	public String getName() {
+		return name;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public CostumeCategory getCategory() {
+		return category;
 	}
 	
 	
