@@ -8,7 +8,6 @@ import java.util.Set;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import model.CostumeCollection;
 import model.RentalShopData;
 import view.View;
 
@@ -17,27 +16,36 @@ public class App {
 	private View view;
 	private RentalShopData shop;
 
-	/**
-	 * 
-	 * @param view
-	 *            the view
-	 * @param shop
-	 *            the model
-	 */
+	
 	public App(View view, RentalShopData shop) {
 
 		this.view = view;
 		this.shop = shop;
 		
 		addListenerToAddCostumeButton (new AddToCostumeButtonListener(view, shop));
+		addListenerToAddCustomerButton(new AddCustomerButtonListener(view, shop));
+		addListenerToRentButton(new RentButtonListener(view, shop));
 		
 		view.setVisible(true);
 	}
 
-	private void addListenerToAddCostumeButton(ActionListener addToCostumeButtonListener) {
-		view.getShopPanel().rentCostumesButton.addActionListener(addToCostumeButtonListener);
+	private void addListenerToRentButton(RentButtonListener rentButtonListener) {
+		view.getShopPanel().rentCostumesButton.addActionListener(rentButtonListener);
 		
 	}
+
+	private void addListenerToAddCustomerButton(AddCustomerButtonListener addCustomerButtonListener) {
+		view.getShopPanel().addCustomerButton.addActionListener(addCustomerButtonListener);
+		
+		
+	}
+
+	private void addListenerToAddCostumeButton(ActionListener addCostumeButtonListener) {
+		view.getShopPanel().addCostumeButton.addActionListener(addCostumeButtonListener);
+		
+	}
+	
+	
 
 	public static void setDefaultSize(int size) {
 
@@ -70,10 +78,9 @@ public class App {
                 }
                 setDefaultSize(16);
 				View view = new View();
-				CostumeCollection itemCollection = new CostumeCollection();
-				itemCollection.fillWithitems();
+				
 		
-				RentalShopData shopModel = new RentalShopData(itemCollection);
+				RentalShopData shopModel = new RentalShopData();
 				App shop = new App(view, shopModel);
             }
 		});

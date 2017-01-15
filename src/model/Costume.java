@@ -9,6 +9,7 @@ public class Costume {
 	public Costume(String costumeName, Integer costumePrice) {
 		this.name = costumeName;
 		this.price = costumePrice;
+		this.available = true;
 	}
 
 	public boolean isAvailable() {

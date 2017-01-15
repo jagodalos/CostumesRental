@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 public class CostumeTableModel extends AbstractTableModel {
-	
+
 	private ArrayList<Costume> costumes = new ArrayList();
 
 	public CostumeTableModel() {
@@ -24,6 +24,10 @@ public class CostumeTableModel extends AbstractTableModel {
 		default:
 			return "";
 		}
+	}
+
+	public Costume getRow(int row) {
+		return costumes.get(row);
 	}
 
 	public ArrayList<Costume> getItems() {
