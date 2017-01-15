@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionListener;
 import java.util.Set;
 
 import javax.swing.UIManager;
@@ -27,8 +28,15 @@ public class App {
 
 		this.view = view;
 		this.shop = shop;
+		
+		addListenerToAddCostumeButton (new AddToCostumeButtonListener(view, shop));
+		
 		view.setVisible(true);
+	}
 
+	private void addListenerToAddCostumeButton(ActionListener addToCostumeButtonListener) {
+		view.getShopPanel().rentCostumesButton.addActionListener(addToCostumeButtonListener);
+		
 	}
 
 	public static void setDefaultSize(int size) {

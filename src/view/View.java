@@ -7,11 +7,11 @@ import javax.swing.JSplitPane;
 
 public class View extends JFrame {
 
-	private CartPanel cartPanel = new CartPanel();
+	private HistoryPanel historyPanel = new HistoryPanel();
 	private ShopPanel shopPanel = new ShopPanel();
 
-	public CartPanel getCartPanel() {
-		return cartPanel;
+	public HistoryPanel getHistoryPanel() {
+		return historyPanel;
 	}
 
 	public ShopPanel getShopPanel() {
@@ -23,9 +23,9 @@ public class View extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500, 500);
 
-		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, getCartPanel(), getShopPanel());
+		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, getShopPanel(),getHistoryPanel());
 		splitPane.setDividerLocation(250);
-		setContentPane(cartPanel);
+		setContentPane(splitPane);
 
 		setSize(new Dimension(600, 650));
 		setMinimumSize(new Dimension(400, 450));

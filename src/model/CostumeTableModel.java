@@ -9,7 +9,7 @@ public class CostumeTableModel extends AbstractTableModel {
 	private ArrayList<Costume> costumes = new ArrayList();
 
 	public CostumeTableModel() {
-
+		super();
 	}
 
 	@Override

@@ -15,15 +15,15 @@ import javax.swing.border.EmptyBorder;
 
 import javafx.scene.layout.Border;
 import model.CostumeCollection;
-import model.CustomerCostumeTableModel;
+import model.HistoryTableModel;
 
-public class CartPanel extends JPanel {
+public class HistoryPanel extends JPanel {
 
 	private JPanel panel;
 	private JTable cartTable;
 	private JPanel topPanel;
 	
-	public CartPanel() {
+	public HistoryPanel() {
 
 		super();
 		this.setLayout(new BorderLayout());
@@ -44,7 +44,7 @@ public class CartPanel extends JPanel {
 		CostumeCollection collection = new CostumeCollection();
 		collection.fillWithitems();
 
-		cartTable = new JTable(new CustomerCostumeTableModel(collection.getCostumes()));
+		cartTable = new JTable(new HistoryTableModel());
 		cartTable.setBorder(BorderFactory.createRaisedBevelBorder());
 		JScrollPane scroll = new JScrollPane(cartTable);
 		this.add(scroll, BorderLayout.CENTER);

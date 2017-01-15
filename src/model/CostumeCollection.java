@@ -33,19 +33,19 @@ public class CostumeCollection {
 				"Queen Amidala", "Ewok", "Yoda", "Chewbacca" };
 		
 		for (String item : starWarsCostumes){
-			costumes.add(new Costume(item,generator.nextInt(300)+ 80, CostumeCategory.STAR_WARS));
+			costumes.add(new Costume(item,generator.nextInt(300)+ 80));
 		}
 		
 		String[] superHeroesCostumes = {"Wonder Woman", "Deadpool", "Batman" ,"Hulk" ,"SpiderMan" ,"Black Widow","Harley Quinn"};
 		
 		for(String item : superHeroesCostumes){
-			costumes.add(new Costume(item, generator.nextInt(200) + 70, CostumeCategory.SUPERHEROES));
+			costumes.add(new Costume(item, generator.nextInt(200) + 70));
 		}
 		
 		String[] halloweenCostumes = {"Vampire", "Mummy", "Skeleton", "Witch", "Tooth Fairy", "Ghost"};
 		
 		for(String item : halloweenCostumes){
-			costumes.add(new Costume(item, generator.nextInt(150) + 50, CostumeCategory.HALLOWEEN));
+			costumes.add(new Costume(item, generator.nextInt(150) + 50));
 		}
 
 	}
