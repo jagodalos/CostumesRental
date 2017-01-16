@@ -1,10 +1,10 @@
 package model;
 
 import java.util.ArrayList;
-
 import javax.swing.table.AbstractTableModel;
 
 public class HistoryTableModel extends AbstractTableModel {
+
 	private ArrayList<SingleLog> logs = new ArrayList();
 
 	public HistoryTableModel() {
@@ -35,6 +35,10 @@ public class HistoryTableModel extends AbstractTableModel {
 
 		logs.add(singleLog);
 
+	}
+	
+	public void removeItem(SingleLog singlelog){
+		logs.remove(singlelog);
 	}
 
 	public HistoryTableModel(ArrayList<SingleLog> logs) {
@@ -75,5 +79,4 @@ public class HistoryTableModel extends AbstractTableModel {
 	public void clear() {
 		logs.clear();
 	}
-
 }

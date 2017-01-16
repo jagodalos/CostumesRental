@@ -4,7 +4,7 @@ public class Costume {
 
 	final private String name;
 	final private Integer price;
-	private boolean available;
+	public boolean available;
 
 	public Costume(String costumeName, Integer costumePrice) {
 		this.name = costumeName;

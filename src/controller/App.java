@@ -8,44 +8,37 @@ import java.util.Set;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import model.RentalShopData;
 import view.View;
 
 public class App {
 
 	private View view;
-	private RentalShopData shop;
 
-	
-	public App(View view, RentalShopData shop) {
+	public App(View view) {
 
 		this.view = view;
-		this.shop = shop;
-		
-		addListenerToAddCostumeButton (new AddToCostumeButtonListener(view, shop));
-		addListenerToAddCustomerButton(new AddCustomerButtonListener(view, shop));
-		addListenerToRentButton(new RentButtonListener(view, shop));
-		
+
+		addListenerToAddCostumeButton(new AddToCostumeButtonListener(view));
+		addListenerToAddCustomerButton(new AddCustomerButtonListener(view));
+		addListenerToRentButton(new RentButtonListener(view));
+
 		view.setVisible(true);
 	}
 
 	private void addListenerToRentButton(RentButtonListener rentButtonListener) {
 		view.getShopPanel().rentCostumesButton.addActionListener(rentButtonListener);
-		
+
 	}
 
 	private void addListenerToAddCustomerButton(AddCustomerButtonListener addCustomerButtonListener) {
 		view.getShopPanel().addCustomerButton.addActionListener(addCustomerButtonListener);
-		
-		
+
 	}
 
 	private void addListenerToAddCostumeButton(ActionListener addCostumeButtonListener) {
 		view.getShopPanel().addCostumeButton.addActionListener(addCostumeButtonListener);
-		
+
 	}
-	
-	
 
 	public static void setDefaultSize(int size) {
 
@@ -69,20 +62,18 @@ public class App {
 	static public void main(String[] args) {
 
 		EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-                    ex.printStackTrace();
-                }
-                setDefaultSize(16);
+			@Override
+			public void run() {
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+						| UnsupportedLookAndFeelException ex) {
+					ex.printStackTrace();
+				}
+				setDefaultSize(16);
 				View view = new View();
-				
-		
-				RentalShopData shopModel = new RentalShopData();
-				App shop = new App(view, shopModel);
-            }
+				App shop = new App(view);
+			}
 		});
 	}
 }

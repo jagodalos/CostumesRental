@@ -7,7 +7,7 @@ public class SingleLog {
 	final private Costume costume;
 	final private Customer customer;
 	final private LocalDate date;
-	
+
 	public SingleLog(Costume costume, Customer customer, LocalDate date) {
 		super();
 		this.costume = costume;
@@ -26,8 +26,4 @@ public class SingleLog {
 	public LocalDate getDate() {
 		return date;
 	}
-	
-	
-	
-	
 }

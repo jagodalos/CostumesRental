@@ -76,5 +76,4 @@ public class CostumeTableModel extends AbstractTableModel {
 	public void clear() {
 		costumes.clear();
 	}
-
 }

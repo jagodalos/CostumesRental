@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
@@ -23,7 +22,7 @@ public class View extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500, 500);
 
-		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, getShopPanel(),getHistoryPanel());
+		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, getShopPanel(), getHistoryPanel());
 		splitPane.setDividerLocation(250);
 		setContentPane(splitPane);
 
